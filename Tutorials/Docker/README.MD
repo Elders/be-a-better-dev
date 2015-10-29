@@ -1,8 +1,8 @@
-===================Docker=For=Dummies==================
+DOCKER FOR DUMMIES
 
 1. Download and install VirtualBox (VB)
 	
-2. Download and install Linux virtual machine (VM) - Ubuntu (for more expirienced linux users better use CoreOs)
+2. Download and install Linux virtual machine (VM) - Ubuntu (for more expirienced linux users we suggest using CoreOs)
 	- download source: http://www.ubuntu.com/
 	- make sure that virtualization is enabled from the BIOS
 	- make sure that hyper v windows feature is turned off
