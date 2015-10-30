@@ -1,9 +1,9 @@
 	#SOLID#
 	1. Single Responsibility Principle
-		a. A class should have only one reason to change. (There can be only one requirement that, when changed, will cause a class to change.)
+		a. A class should have only one reason to change. (There can be only one requirement that, when changed, will cause a class to change.)
 		b. Benefits
 	2. Open/Close Principle
-		a. Software entities should be open for extension, but closed for modification. (Once a class is done, it is DONE!)
+		a. Software entities should be open for extension, but closed for modification. (Once a class is done, it is DONE!)
 		b. Meyer vs. Polymorphic
 		c. Benefits
 	3. Liskovs Substitution Principle
