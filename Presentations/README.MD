@@ -1,3 +1,26 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Group A](#)
+	- [S.O.L.I.D.](#)
+	- [Models for the Rescue](#)
+	- [Domain Driven Design](#)
+		- [DDD Introduction](#)
+		- [DDD Strategic Design](#)
+		- [DDD Tactical Design](#)
+- [Group B](#)
+	- [Software Architecture (Parts I, II & III)](#)
+- [Group C](#)
+	- [Application Lifecycle Management](#)
+	- [Continuous Integration, Deployment, Delivery](#)
+	- [Generic Domain as a Service](#)
+- [Group D](#)
+	- [CQRS](#)
+	- [Event Sourcing](#)
+- [Group E](#)
+	- [oAuth 2.0 & OIDC](#)
+	- [Lucene](#)
+	- [Hystrix](#)
+
 #Group A#
 ##S.O.L.I.D.##
 
@@ -37,9 +60,11 @@ DTO / View Model, Decoupling, Publish/Subscribe, Eventual Consistency, Command, 
 ##Event Sourcing##
 Eventual Consistency, Command, Event, Port, Projection, Idempotency, Messaging
 
-#oAuth 2.0 & OIDC#
+#Group E#
 
-#Lucene#
+##oAuth 2.0 & OIDC##
 
-#Hystrix#
+##Lucene##
+
+##Hystrix##
 
