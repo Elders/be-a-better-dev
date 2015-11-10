@@ -14,7 +14,7 @@ https://help.github.com/articles/dealing-with-line-endings/
 
 Bellow is a full .gitconfig file using kdiff3 as merging tool on Windows including helper aliases
 
-
+```  
 [merge]
     tool = kdiff3
 [mergetool "kdiff3"]
@@ -122,4 +122,5 @@ Bellow is a full .gitconfig file using kdiff3 as merging tool on Windows includi
 	
     # Pull request locally : git pr 14 (#14 is the id of the pull request)
     pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
-    pr-clean = "!git for-each-ref refs/heads/pr-* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+    pr-clean = "!git for-each-ref refs/heads/pr-* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"  
+```
