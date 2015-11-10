@@ -74,7 +74,7 @@ Bellow is a full .gitconfig file using kdiff3 as merging tool on Windows includi
     wipe = !git add -A && git commit -qm \"UNDO SAVEPOINT\" && git reset HEAD~1 --hard
 
     # bclean : used by bdone
-    bclean = "!f() { git branch --merged ${1-master} | grep -v \" ${1-master}$\" | xargs git branch -d; }; f"
+    bclean = "!f() { git branch --merged ${1-master} | grep -v ${1-master}$ | xargs -r git branch -d; }; f"
 
     # bdone : chekout master and clean the merged branches
     bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
