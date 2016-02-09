@@ -12,8 +12,8 @@
     - run settings on newly created virtual machine. In storage section click add CD/DVD Device and point to downloaded CoreOS image
     - run the VM instance and install the operation system (OS)
         + at this point you have the CoreOS running in "Live CD" mode which means that whatever you do it will be cleaned up when you restart the VM. Steps bellow fixes this.
-        + `sudo openssl passwd -1 > cloud-config-file` will create a cloud config file with your password hash
-        + `vi cloud-config-file` add minimum information in the cloud-config file
+        + `sudo openssl passwd -1 > cloud-config-file.yml` will create a cloud config file with your password hash
+        + `vi cloud-config-file.yml` add minimum information in the cloud-config file
 ```
 #cloud-config
 users:
@@ -28,12 +28,12 @@ users:
 - unmount the CoreOS image
 
 Usable containers
-	
+-----------------
 - Set up Cassandra with Docker  
-`docker run --restart=always -d --name docker-cass -p 9042:9042 -p 9160:9160 -p 7199:7199 -p 7001:7001 -p 7000:7000 cassandra`
+`docker run --restart=always -d --name cassandra -p 9042:9042 -p 9160:9160 -p 7199:7199 -p 7001:7001 -p 7000:7000 cassandra`
 
 - Set up RabbitMq with Docker. Make sure that you change **UNIQUENAME** to something unique  
-`docker run --restart=always -d -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name docker-rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3.5.2-management`
+`docker run --restart=always -d -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3.6.0-management`
 	
 - Set up ElasticSearch with Docker  
-`docker run --restart=always -d --name docker-elastic -p 9200:9200 -p 9300:9300 elasticsearch`
+`docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 elasticsearch`
