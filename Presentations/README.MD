@@ -8,7 +8,10 @@
 		- [DDD Strategic Design](#)
 		- [DDD Tactical Design](#)
 - [Group B](#)
-	- [Software Architecture (Parts I, II & III)](#)
+	- [Software Architecture: It is not what you think](#)
+	- [Software Architecture: The ROCK](#)
+	- [Software Architecture: STD](#)
+	- [Software Architecture: The Pigeon](#)
 - [Group C](#)
 	- [Application Lifecycle Management](#)
 	- [Continuous Integration, Deployment, Delivery](#)
@@ -36,11 +39,21 @@ Ubiquitous Language
 Boundary, ACL, Bounded Context,Domain, Generic Domain
 
 ###DDD Tactical Design###
-Invariant, Model ID as Value Object (AR ID), Aggregate,Entity, Value Object
+Invariant, Model ID as Value Object (AR ID), Aggregate, Entity, Value Object
 
 #Group B#
-##Software Architecture (Parts I, II & III)##
-Boundary, Actor Pattern, CAP Theorem, Layered Architecture, Messaging, Microservices, Monolith, Onion Architecture, ORM, Scalability, SOA, Logical Architecture, Physical Architecture, Decoupling, Publish/Subscribe, CQRS, Eventual Consistency, Event Sourcing
+
+##Software Architectures: It is not what you think##
+- Logical Architecture, Physical Architecture, Boundary, Decoupling, INTRO: Kinds of Architecuters, INTRO: what is not an architerures(REST, TCP, AMQP), INTRO: architectural pattenrs - layerd, cqrs, actor
+
+##Software Architectures: The ROCK##
+- Layered Architecture, Monolith, Scaling the monolith(CAP Theorem)
+
+##Software Architectures: The ##
+- SOA, CAP Theorem, Scalability, Onion Architecture, Microservices
+
+##Software Architectures: The Pigeon##
+- Messaging, Publish/Subscribe, Eventual Consistency, Idempotency
 
 #Group C#
 ##Application Lifecycle Management##
@@ -55,10 +68,11 @@ Company Culture
 #Group D#
 
 ##CQRS##
+-SD
 DTO / View Model, Decoupling, Publish/Subscribe, Eventual Consistency, Command, Query
 
 ##Event Sourcing##
-Eventual Consistency, Command, Event, Port, Projection, Idempotency, Messaging
+Eventual Consistency, Command, Event, Port, Projection, Idempotency, Messaging, Conflict Resolution, Compensating Events
 
 #Group E#
 
