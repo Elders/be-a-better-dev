@@ -40,6 +40,14 @@ Usable containers
     - `apt-get install curl -y` to install `curl`
     - `curl http://www.rabbitmq.com/community-plugins/v3.6.x/rabbitmq_delayed_message_exchange-0.0.1.ez --output usr/lib/rabbitmq/lib/rabbitmq_server-3.6.1/plugins/rabbitmq_delayed_message_exchange-0.0.1.ez` will download the plugin in the [RabbitMQ plugins folder](https://www.rabbitmq.com/installing-plugins.html)
     - `rabbitmq-plugins enable rabbitmq_delayed_message_exchange` will activate the plugin
-	
+  - To reset RabbitMQ instance - this will reset all settings to factory defaults, even users
+    - login to the RabbitMQ container
+    - `rabbitmqctl stop_app`
+    - `rabbitmqctl reset`
+    - `rabbitmqctl start_app`
 - Set up ElasticSearch with Docker  
 `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 elasticsearch`
+
+Login in a container
+--------------------
+`docker exec -it {container-name} bash`
