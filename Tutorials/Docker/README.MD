@@ -46,7 +46,9 @@ Usable containers
     - `rabbitmqctl reset`
     - `rabbitmqctl start_app`
 - Set up ElasticSearch with Docker  
-`docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 elasticsearch`
+`docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 elasticsearch -Des.node.name="docker-local"`
+- Set up ElasticSearch for logs with Docker
+`docker run --restart=always -d --name log -p 9200:9200 -p 9300:9300 elasticsearch -Des.node.name="docker-local"`
 
 Login in a container
 --------------------
