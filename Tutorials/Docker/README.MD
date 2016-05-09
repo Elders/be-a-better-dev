@@ -29,10 +29,10 @@ users:
 
 Usable containers
 -----------------
-- Set up Cassandra with Docker  
+- Setup Cassandra with Docker  
 `docker run --restart=always -d --name cassandra -p 9042:9042 -p 9160:9160 -p 7199:7199 -p 7001:7001 -p 7000:7000 cassandra`
 
-- Set up RabbitMq with Docker. Make sure that you change **UNIQUENAME** to something unique  
+- Setup RabbitMq with Docker. Make sure that you change **UNIQUENAME** to something unique  
 `docker run --restart=always -d -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3.6.1-management`
   - To install RabbitMQ plugin to delay messages: [rabbitmq_delayed_message_exchange](http://www.rabbitmq.com/community-plugins.html)
     - `docker exec -it rabbitmq bash` will login to the container instance
@@ -45,10 +45,14 @@ Usable containers
     - `rabbitmqctl stop_app`
     - `rabbitmqctl reset`
     - `rabbitmqctl start_app`
-- Set up ElasticSearch with Docker  
+- Setup ElasticSearch with Docker  
 `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 elasticsearch -Des.node.name="docker-local"`
-- Set up ElasticSearch for logs with Docker
-`docker run --restart=always -d --name log -p 9200:9200 -p 9300:9300 elasticsearch -Des.node.name="docker-local"`
+- Setup LOG
+  - Setup ElasticSearch for logs with Docker  
+  `docker run --restart=always -d --name log -p 9200:9200 -p 9300:9300 elasticsearch -Des.node.name="docker-local"`
+  - Setup Kibana  
+  *docker run --restart=always -d --name kibana --link {elasticsearchcontainer}:elasticsearch -p 5601:5601 kibana*
+  `docker run --restart=always -d --name kibana --link log:elasticsearch -p 5601:5601 kibana`
 
 Login in a container
 --------------------
