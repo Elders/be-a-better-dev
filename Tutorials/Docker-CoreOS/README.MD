@@ -19,5 +19,7 @@
 **Current documentation is working with:**
 
 > CoreOS 4.5.0-coreos-r1 https://coreos.com/releases/
+>
 > Docker version 1.10.3, build 8acee1b https://github.com/docker/docker/releases
+> 
 > Docker-compose version 1.7.1, build 0a9ab35 https://github.com/docker/compose/releases

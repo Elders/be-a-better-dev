@@ -55,8 +55,13 @@ exec crond -f
 
 **Current documentation is working with:**
 > Docker version 1.11.1, build 5604cbe https://github.com/docker/docker/releases
+> 
 > Docker-compose version 1.7.1, build 0a9ab35 https://github.com/docker/compose/releases
+> 
 > Alpine 3.3.3 https://hub.docker.com/_/alpine/
+> 
 > ElasticSearch 2.3.3 https://hub.docker.com/_/elasticsearch/
+> 
 > Kibana 4.5.1 https://hub.docker.com/_/kibana/
+> 
 > Curator 3.5.1 https://pypi.python.org/pypi/elasticsearch-curator/3.5.1
