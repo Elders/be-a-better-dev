@@ -53,6 +53,8 @@ Usable containers
   - Setup Kibana  
   *docker run --restart=always -d --name kibana --link {elasticsearchcontainer}:elasticsearch -p 5601:5601 kibana*
   `docker run --restart=always -d --name kibana --link log:elasticsearch -p 5601:5601 kibana`
+- Atlas
+`docker run --restart=always --name=atlas -d -p 7101:7101 eldersoss/atlas`
 
 Login in a container
 --------------------
