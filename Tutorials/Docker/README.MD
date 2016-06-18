@@ -33,12 +33,12 @@ Usable containers
 `docker run --restart=always -d --name cassandra -p 9042:9042 -p 9160:9160 -p 7199:7199 -p 7001:7001 -p 7000:7000 cassandra`
 
 - Setup RabbitMq with Docker. Make sure that you change **UNIQUENAME** to something unique  
-`docker run --restart=always -d -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3.6.1-management`
+`docker run --restart=always -d -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3.6.2-management`
   - To install RabbitMQ plugin to delay messages: [rabbitmq_delayed_message_exchange](http://www.rabbitmq.com/community-plugins.html)
     - `docker exec -it rabbitmq bash` will login to the container instance
     - `apt-get update` will refresh the packages. This is a preparation for installing `curl`
     - `apt-get install curl -y` to install `curl`
-    - `curl http://www.rabbitmq.com/community-plugins/v3.6.x/rabbitmq_delayed_message_exchange-0.0.1.ez --output usr/lib/rabbitmq/lib/rabbitmq_server-3.6.1/plugins/rabbitmq_delayed_message_exchange-0.0.1.ez` will download the plugin in the [RabbitMQ plugins folder](https://www.rabbitmq.com/installing-plugins.html)
+    - `curl http://www.rabbitmq.com/community-plugins/v3.6.x/rabbitmq_delayed_message_exchange-0.0.1.ez --output usr/lib/rabbitmq/lib/rabbitmq_server-3.6.2/plugins/rabbitmq_delayed_message_exchange-0.0.1.ez` will download the plugin in the [RabbitMQ plugins folder](https://www.rabbitmq.com/installing-plugins.html)
     - `rabbitmq-plugins enable rabbitmq_delayed_message_exchange` will activate the plugin
   - To reset RabbitMQ instance - this will reset all settings to factory defaults, even users
     - login to the RabbitMQ container
