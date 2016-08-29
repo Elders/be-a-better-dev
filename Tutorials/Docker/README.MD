@@ -45,6 +45,9 @@ Usable containers
 - Atlas
 `docker run --restart=always --name=atlas -d -p 7101:7101 eldersoss/atlas`
 
+- Setup Neo4j with Docker
+`docker run --restart=always -d --name neo4j --publish=7474:7474 --publish=7687:7687 --cap-add=SYS_RESOURCE -v /var/lib/neo4j/data neo4j`
+
 Login in a container
 --------------------
 `docker exec -it {container-name} bash`
