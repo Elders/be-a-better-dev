@@ -9,3 +9,4 @@
 
 The result for `username password` for example is `username:{SHA}W6ph5Mm5Pz8GgiULbPgzG37mj9g=`
 
+![htpasswd generator example](https://raw.githubusercontent.com/Elders/be-a-better-dev/master/Tools/GoCD/htpasswd-generator-example.png)
