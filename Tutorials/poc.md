@@ -7,10 +7,10 @@ Gather business requirements and specifications. Talk to the domain experts and 
 - is it a generig BC?
 
 ##2.1 - Small effort
-Analysis outcome is that the feature can be done in 1 or 2 sprints. GOTO => 6
+Analysis outcome is that the feature can be done in 1 or 2 sprints. GOTO => 5
 
 ##2.1 - Big effort
-Analysis outcome is that it is a big feature or probably a new bounded context. GOTO => 3 can be done in 1 or 2 sprints. GOTO => 3
+Analysis outcome is that it is a big feature or probably a new bounded context. GOTO => 3
 
 #3 - Develop POC
 Develop a technical solution as fast and dirty as possible just to see if it will work
@@ -20,7 +20,7 @@ Develop a technical solution as fast and dirty as possible just to see if it wil
 - if the team approves it just continue with the rest of the steps
 - if the team does not approve it GOTO => 3
 
-#5 - Estimate POC
+#5 - Estimate
 Estimate the rest of the work for integrating the POC into the working solution
 
 #6 - Present the estimated POC to the steak holders and the domain experts
