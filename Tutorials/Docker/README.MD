@@ -51,3 +51,14 @@ Usable containers
 Login in a container
 --------------------
 `docker exec -it {container-name} bash`
+
+Docker Remote API
+-----------------
+- Setup Amazon based docker
+In RHEL7, instead of modifying your docker.service unit file, you can also just edit your /etc/sysconfig/docker file:
+```
+# /etc/sysconfig/docker
+
+# Modify these options if you want to change the way the docker daemon runs
+OPTIONS='--selinux-enabled -H unix:///var/run/docker.sock -H tcp://0.0.0.0:4243'
+``
