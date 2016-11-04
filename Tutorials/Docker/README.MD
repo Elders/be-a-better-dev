@@ -56,14 +56,17 @@ Docker Remote API
 -----------------
 - Setup Amazon based docker
 In RHEL7, instead of modifying your docker.service unit file, you can also just edit your /etc/sysconfig/docker file:
+
 ```
 # /etc/sysconfig/docker
 
 # Modify these options if you want to change the way the docker daemon runs
 OPTIONS='--selinux-enabled -H unix:///var/run/docker.sock -H tcp://0.0.0.0:4243'
-``
+```
+
 - How to enable docker remote api on CoreOS => https://coreos.com/os/docs/latest/customizing-docker.html
 Create a file called /etc/systemd/system/docker-tcp.socket to make Docker available on a TCP socket on port 4243
+
 ```
 [Unit]
 Description=Docker Socket for the API
@@ -76,7 +79,9 @@ Service=docker.service
 [Install]
 WantedBy=sockets.target
 ```
+
 Then enable this new socket:
+
 ```
 systemctl enable docker-tcp.socket
 systemctl stop docker
