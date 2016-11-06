@@ -33,7 +33,7 @@ Usable containers
 `docker run --restart=always -d --name cassandra -p 9042:9042 -p 9160:9160 -p 7199:7199 -p 7001:7001 -p 7000:7000 cassandra`
 
 - Setup RabbitMq with Docker. Make sure that you change **UNIQUENAME** to something unique  
-`docker run --restart=always -d -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 eldersoss/rabbitmq`
+`docker run --restart=always -d -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 elders/rabbitmq:release-1.0.0`
 - Setup ElasticSearch with Docker  
 `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 elasticsearch -Des.node.name="docker-local"`
 - Setup LOG
