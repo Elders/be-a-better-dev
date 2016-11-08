@@ -48,6 +48,10 @@ Usable containers
 - Setup Neo4j with Docker
 `docker run --restart=always -d --name neo4j --publish=7474:7474 --publish=7687:7687 --cap-add=SYS_RESOURCE -v /var/lib/neo4j/data neo4j`
 
+- Setup Redis with Docker
+  - Standalone
+  `docker run --name standalone-node -p 6379:6379 -d redis`
+
 Login in a container
 --------------------
 `docker exec -it {container-name} bash`
