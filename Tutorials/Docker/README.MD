@@ -50,7 +50,7 @@ Usable containers
 
 - Setup Redis with Docker
   - Standalone
-  `docker run --name standalone-node -p 6379:6379 -d redis`
+  `docker run --restart=always --name standalone-node -p 6379:6379 -d redis`
 
 Login in a container
 --------------------
