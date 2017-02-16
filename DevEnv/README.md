@@ -129,4 +129,4 @@ To fix the tracking conflicts(reset files to commit)
 git rm --cached -r .
 
 git reset --hard
-``
+```
