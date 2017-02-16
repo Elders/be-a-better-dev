@@ -124,3 +124,9 @@ Bellow is a full .gitconfig file using kdiff3 as merging tool on Windows includi
     pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
     pr-clean = "!git for-each-ref refs/heads/pr-* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"  
 ```
+To fix the tracking conflicts(reset files to commit)
+```
+git rm --cached -r .
+
+git reset --hard
+``
