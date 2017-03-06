@@ -34,19 +34,21 @@ Usable containers
 
 - Setup RabbitMq with Docker. Make sure that you change **UNIQUENAME** to something unique  
 `docker run --restart=always -d -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 elders/rabbitmq:release-1.0.0`
-- Setup ElasticSearch with Docker  
-`docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 elasticsearch -Des.node.name="docker-local"`
-- Setup LOG
-  - Setup ElasticSearch for logs with Docker  
-  `docker run --restart=always -d --name log -p 9200:9200 -p 9300:9300 elasticsearch -Des.node.name="docker-local"`
-  - Setup Kibana  
-  *docker run --restart=always -d --name kibana --link {elasticsearchcontainer}:elasticsearch -p 5601:5601 kibana*
-  `docker run --restart=always -d --name kibana --link log:elasticsearch -p 5601:5601 kibana`
-- Atlas
-`docker run --restart=always --name=atlas -d -p 7101:7101 eldersoss/atlas`
 
-- Setup Neo4j with Docker
-`docker run --restart=always -d --name neo4j --publish=7474:7474 --publish=7687:7687 --cap-add=SYS_RESOURCE -v /var/lib/neo4j/data neo4j`
+- Setup ElasticSearch with Docker  
+	- Create [docker volume](https://docs.docker.com/engine/reference/commandline/volume_create/)  `docker volume create --name esdata`
+	- Create container `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e CLUSTER=docker-cluster -e ES_JAVA_OPTS="-Xms7g -Xmx7g" -v esdata:/usr/share/elasticsearch/data docker.elastic.co/elasticsearch/elasticsearch:5.2.0"`
+	- login the container `docker exec -it elasticsearch bash`
+	- edit elasticsearch.yaml file `vi config/elasticsearch.yml` by adding `xpack.security.enabled: false` This will disable the authentication.
+	
+- Setup Kibana - `docker run --restart=always -d --name kibana --link {elasticsearchcontainer}:elasticsearch -p 5601:5601 kibana:5.2`
+
+
+- Atlas - `docker run --restart=always --name=atlas -d -p 7101:7101 eldersoss/atlas`
+
+
+- Setup Neo4j with Docker 
+`docker run --restart=always -d --name neo4j --publish=7474:7474 --publish=7687:7687 --cap-add=SYS_RESOURCE -v /var/lib/neo4j/data --env NEO4J_AUTH=none --env NEO4J_dbms_memory_heap_maxSize=1024 --env NEO4J_dbms_memory_pagecache_size=1G neo4j:3.0.6`
 
 - Setup Redis with Docker
   - Standalone
