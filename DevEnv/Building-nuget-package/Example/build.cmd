@@ -8,7 +8,7 @@ SET NYX=%LocalAppData%\Nyx\tools\build_next.fsx
 SET GITVERSION=%LocalAppData%\GitVersion.CommandLine\tools\GitVersion.exe
 
 echo Downloading NuGet.exe...
-IF NOT EXIST @powershell -NoProfile -ExecutionPolicy unrestricted -Command "New-Item -ItemType directory -Path %LocalAppData%\NuGet\; (New-Object System.Net.WebClient).DownloadFile('https://dist.nuget.org/win-x86-commandline/latest/nuget.exe','%NUGET%')"
+IF NOT EXIST %NUGET% @powershell -NoProfile -ExecutionPolicy unrestricted -Command "New-Item -ItemType directory -Path %LocalAppData%\NuGet\; (New-Object System.Net.WebClient).DownloadFile('https://dist.nuget.org/win-x86-commandline/latest/nuget.exe','%NUGET%')"
 
 echo Downloading FAKE...
 IF NOT EXIST %LocalAppData%\FAKE %NUGET% "install" "FAKE" "-OutputDirectory" "%LocalAppData%" "-ExcludeVersion" "-Version" "4.50.0"
