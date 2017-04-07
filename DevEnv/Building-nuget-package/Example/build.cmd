@@ -31,4 +31,4 @@ SET NUGET_SOURCE_PUSH=URL_WITH_READONLY_KEY
 SET SUMMARY="Example Project Summary"
 SET DESCRIPTION="Example Project Description"
 
-%FAKE% %NYX% appName=APP_NAME appSummary=%SUMMARY% appDescription=%DESCRIPTION% nugetPackageName=APP_NAME nugetkey=%RELEASE_NUGETKEY% nugetserver=%RELEASE_TARGETSOURCE%
+%FAKE% %NYX% appName=APP_NAME appSummary=%SUMMARY% appDescription=%DESCRIPTION% nugetPackageName=APP_NAME nugetkey=%RELEASE_NUGETKEY% nugetserver=%NUGET_SOURCE_PUSH%
