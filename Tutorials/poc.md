@@ -7,7 +7,7 @@ Gather business requirements and specifications. Talk to the domain experts and 
 ## #2 - Analyze the results from step 1  
 - in which bounded context the feature fits in?
 - do we break boundaries in some way?
-- is it a generig BC?
+- is it a generic BC?
 
 ### #2.1 - Small effort  
 Analysis outcome is that the feature can be done in 1 or 2 sprints. GOTO => 5
