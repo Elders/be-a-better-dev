@@ -1,3 +1,6 @@
+# Proof of Concept (POC)
+The aim of this document is to outline the steps needed to dp effective research
+
 #1 - Requirements and Specifications
 Gather business requirements and specifications. Talk to the domain experts and try to learn as much as possible
 
