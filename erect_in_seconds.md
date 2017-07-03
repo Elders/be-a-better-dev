@@ -1,6 +1,6 @@
 # Quick and Painless Erection in 6 Easy Steps 
 
-### ... or How to Setup QORE Project from the Beggining
+### ... or How to Setup QORE Project from the Beginning
 
 
 ## 1. Erect Repository with all Artifacts
