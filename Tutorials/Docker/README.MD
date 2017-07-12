@@ -37,10 +37,8 @@ Usable containers
 
 - Setup ElasticSearch with Docker  
 	- Create [docker volume](https://docs.docker.com/engine/reference/commandline/volume_create/)  `docker volume create --name esdata`
-	- Create container `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e CLUSTER=docker-cluster -e ES_JAVA_OPTS="-Xms7g -Xmx7g" -v esdata:/usr/share/elasticsearch/data docker.elastic.co/elasticsearch/elasticsearch:5.2.0`
-	- login the container `docker exec -it elasticsearch bash`
-	- edit elasticsearch.yaml file `vi config/elasticsearch.yml` by adding `xpack.security.enabled: false` This will disable the authentication.
-  - edit elasticsearch.yaml file `vi config/elasticsearch.yml` by adding `xpack.monitoring.enabled: false` This will disable the logging monitoring data.
+	- Create container `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e CLUSTER=docker-cluster -e ES_JAVA_OPTS="-Xms7g -Xmx7g" -v esdata:/usr/share/elasticsearch/data elders/elasticsearch:1.0`
+  - `ES_JAVA_OPTS="-Xms7g -Xmx7g"` allows ES to use 7 GB of RAM. Check the machine's available RAM before executing the command above
 	
 - Setup Kibana - `docker run --restart=always -d --name kibana --link {elasticsearchcontainer}:elasticsearch -p 5601:5601 kibana:5.2`
 
