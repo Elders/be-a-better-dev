@@ -34,6 +34,9 @@ Bellow is a full .gitconfig file using kdiff3 as merging tool on Windows includi
 [mergetool]
     keepBackup = false
 [alias]
+    # xxx : opens global configuration for edit
+    ec = config --global --edit
+
     # xxx : clean the repo and all subdirs by removing all untracked files
     xxx = "!f() { find . -name .git -type d -execdir git clean -xdf \\; ; }; f"
 
