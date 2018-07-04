@@ -1,4 +1,6 @@
-If youy meet this kind of problem https://i.imgur.com/PXRXhWK.png you will need to do the following things:
+If you bump into this problem 
+https://i.imgur.com/PXRXhWK.png 
+you will need to do the following things:
 
 - go to "C:\Users\r2d2\AppData\Roaming\NuGet"
 - replace the content of NuGet.Config with:
