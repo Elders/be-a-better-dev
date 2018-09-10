@@ -46,7 +46,7 @@ Usable containers
 
 - Atlas - `docker run --restart=always --name=atlas -d -p 7101:7101 eldersoss/atlas`
 
-- Setup Cronus.UI - `docker run --restart=always --name=cronus -d -p 8080:8080 elders/cronus`
+- Setup Cronus.UI - `docker run --restart=always --name=cronus -d -p 8080:8080 elders/cronus:0.2.0`
 
 - Setup Neo4j with Docker 
 `docker run --restart=always -d --name neo4j --publish=7474:7474 --publish=7687:7687 --cap-add=SYS_RESOURCE -v /var/lib/neo4j/data --env NEO4J_AUTH=none --env NEO4J_dbms_memory_heap_maxSize=1024 --env NEO4J_dbms_memory_pagecache_size=1G neo4j:3.0.6`
