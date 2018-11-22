@@ -1,34 +1,7 @@
-#DOCKER FOR DUMMIES#
+# DOCKER FOR DUMMIES
 
-1. Download and install VirtualBox
-	
-2. Download and install Linux virtual machine - CoreOs
-    - download source: https://coreos.com/os/docs/latest/booting-with-iso.html
-    - make sure that virtualization is enabled from the BIOS
-    - make sure that hyper v windows feature is turned off
-    - run VirtualBox and create new Linux virtual machine
-        + Ubuntu 64bit with at least 1 GB of ram and 15 GB of disk space (fixed size)
-    - run settings on newly created virtual machine. In network section change "Attached to" to Bridged Adapter
-    - run settings on newly created virtual machine. In storage section click add CD/DVD Device and point to downloaded CoreOS image
-    - run the VM instance and install the operation system (OS)
-        + at this point you have the CoreOS running in "Live CD" mode which means that whatever you do it will be cleaned up when you restart the VM. Steps bellow fixes this.
-        + `sudo openssl passwd -1 > cloud-config-file.yml` will create a cloud config file with your password hash
-        + `vi cloud-config-file.yml` add minimum information in the cloud-config file
-```
-#cloud-config
-users:
-- name: username
-  passwd: passwordhash
-  groups:
-  - sudo
-  - docker
-```
-- `sudo coreos-install -d /dev/sda -C stable -c cloud-config-file.yml` to do the actuall install of CoreOS
-- `sudo shutdown -h now` will shutdown the VM
-- unmount the CoreOS image
+# Usable containers
 
-Usable containers
------------------
 - Setup Cassandra with Docker  
 `docker run --restart=always -d --name cassandra -p 9042:9042 -p 9160:9160 -p 7199:7199 -p 7001:7001 -p 7000:7000 cassandra`
 
@@ -58,12 +31,16 @@ Usable containers
 - Consul for local dev env with docker for windows
 `docker run --restart=always -d -p 8500:8500 -p 8400:8400 -p 8300:8300/tcp -p 8301:8301 -p 8302:8302 -p 8300:8300/udp -p 8301:8301/udp -p 8302:8302/udp -p 8600:8600 -p 8600:8600/udp -e ZEUS_OPTIONS="machine+-f" --net=host --name consul eldersoss/consul-zeus:latest agent -node=consul-node -ui -advertise=10.0.75.2 -client=10.0.75.2 -bootstrap -server=true`
 
-Login in a container
---------------------
+# Login in a container
+
 `docker exec -it {container-name} bash`
 
-Docker Remote API
------------------
+# Stop all running containers
+
+`docker stop $(docker ps -a -q)`
+
+## Docker Remote API
+
 - Setup Amazon based docker
 In RHEL7, instead of modifying your docker.service unit file, you can also just edit your /etc/sysconfig/docker file:
 
@@ -98,3 +75,32 @@ systemctl stop docker
 systemctl start docker-tcp.socket
 systemctl start docker
 ```
+
+# Install docker with VirtualBox
+
+1. Download and install VirtualBox
+	
+2. Download and install Linux virtual machine - CoreOs
+    - download source: https://coreos.com/os/docs/latest/booting-with-iso.html
+    - make sure that virtualization is enabled from the BIOS
+    - make sure that hyper v windows feature is turned off
+    - run VirtualBox and create new Linux virtual machine
+        + Ubuntu 64bit with at least 1 GB of ram and 15 GB of disk space (fixed size)
+    - run settings on newly created virtual machine. In network section change "Attached to" to Bridged Adapter
+    - run settings on newly created virtual machine. In storage section click add CD/DVD Device and point to downloaded CoreOS image
+    - run the VM instance and install the operation system (OS)
+        + at this point you have the CoreOS running in "Live CD" mode which means that whatever you do it will be cleaned up when you restart the VM. Steps bellow fixes this.
+        + `sudo openssl passwd -1 > cloud-config-file.yml` will create a cloud config file with your password hash
+        + `vi cloud-config-file.yml` add minimum information in the cloud-config file
+```
+#cloud-config
+users:
+- name: username
+  passwd: passwordhash
+  groups:
+  - sudo
+  - docker
+```
+- `sudo coreos-install -d /dev/sda -C stable -c cloud-config-file.yml` to do the actuall install of CoreOS
+- `sudo shutdown -h now` will shutdown the VM
+- unmount the CoreOS image
