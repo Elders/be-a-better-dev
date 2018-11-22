@@ -39,7 +39,7 @@
 
 `docker stop $(docker ps -a -q)`
 
-## Docker Remote API
+# Docker Remote API
 
 - Setup Amazon based docker
 In RHEL7, instead of modifying your docker.service unit file, you can also just edit your /etc/sysconfig/docker file:
