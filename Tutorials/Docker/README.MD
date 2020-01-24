@@ -32,6 +32,9 @@
 - Consul for local dev env with docker for windows
 `docker run --restart=always -d -p 8500:8500 -p 8400:8400 -p 8300:8300/tcp -p 8301:8301 -p 8302:8302 -p 8300:8300/udp -p 8301:8301/udp -p 8302:8302/udp -p 8600:8600 -p 8600:8600/udp -e ZEUS_OPTIONS="machine+-f" --net=host --name consul eldersoss/consul-zeus:latest agent -node=consul-node -ui -advertise=10.0.75.2 -client=10.0.75.2 -bootstrap -server=true`
 
+- Consul for mynkow  
+`docker run --restart=always -d --net=host --name consul consul:1.6.2 agent -server -node=mynkow -ui -advertise=10.0.75.2 -bootstrap -client=0.0.0.0`
+
 # Login in a container
 
 `docker exec -it {container-name} bash`
