@@ -11,7 +11,7 @@
 - Setup ElasticSearch with Docker (**NB**: Container memory is limited to 3GB in example):  
 	- Create [docker volume](https://docs.docker.com/engine/reference/commandline/volume_create/)  `docker volume create --name esdata`
 	- Create container  
-  `docker run --restart=always -d -m 3g --name elasticsearch -p 9200:9200 -p 9300:9300 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e "discovery.type=single-node" -e "discovery.zen.minimum_master_nodes=1" -e "cluster.name=docker-local" -e "bootstrap.memory_lock=true" -e ES_JAVA_OPTS="-Xms2g -Xmx2g" -v esdata:/usr/share/elasticsearch/data docker.elastic.co/elasticsearch/elasticsearch-oss:6.2.4`
+  `docker run --restart=always -d -m 3g --name elasticsearch -p 9200:9200 -p 9300:9300 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e "discovery.type=single-node" -e "discovery.zen.minimum_master_nodes=1" -e "cluster.name=docker-local" -e "bootstrap.memory_lock=true" -e ES_JAVA_OPTS="-Xms2g -Xmx2g" -v esdata:/usr/share/elasticsearch/data docker.elastic.co/elasticsearch/elasticsearch-oss:7.5.2`
   - `ES_JAVA_OPTS="-Xms2g -Xmx2g"` allows ES to use 2 GB of RAM. Check the machine's available RAM before executing the command above. The docker container is allowed 3 GB as it needs to be more than the 2GB for elastic.
   - For reference [https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 	
