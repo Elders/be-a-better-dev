@@ -6,7 +6,7 @@
 `docker run --restart=always -d -m 2g --name cassandra -p 9042:9042 -p 9160:9160 -p 7199:7199 -p 7001:7001 -p 7000:7000 cassandra`
 
 - Setup RabbitMq with Docker. Make sure that you change **UNIQUENAME** to something unique  (*NB*: Container memory is limited to 512MB in example):  
-`docker run --restart=always -d -m 512m -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 elders/rabbitmq:3.8.3`
+`docker run --restart=always -d -m 512m --hostname node1 -e RABBITMQ_NODENAME=docker-UNIQUENAME-rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 elders/rabbitmq:3.8.3`
 
 - Setup ElasticSearch with Docker (**NB**: Container memory is limited to 3GB in example):  
 	- Create [docker volume](https://docs.docker.com/engine/reference/commandline/volume_create/)  `docker volume create --name esdata`
