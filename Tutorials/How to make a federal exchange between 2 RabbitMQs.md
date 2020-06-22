@@ -38,4 +38,5 @@
 - **Name** - INT
 - **Pattern** - PublicEvents$
 - **Apply to** - Exchanges
+- **Put in Definition** - federation-upstream	= INT
 5. Go to `Admin-> Federation Upstreams` again and edit the Max Hops for our `unicom-public-host` VHost to `2`
