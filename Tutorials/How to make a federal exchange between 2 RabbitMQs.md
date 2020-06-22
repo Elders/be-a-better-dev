@@ -9,6 +9,7 @@
 3. In the downstream RabbitMQ go to Admin Tab-> Federation Upstream and add a new upstream with the following settings:
 - **Virtual Host** - Here you pick the downstream public VHost where you want to receive the messages
 - **Uri** - Put the Uri to the Upstream RMQ VHost and the credentials for the RMQ user amqp://guest:guest@rmq.integration.onebigsplash.com:5672/unicom-public
+- **Name** - Fed Upstream Name
 - **Exchange** - Put the upstream exchange
 4. Go to *Admin --> Policies* and add a policy. That policy is the connection between the federated exchange we created in step 3 and the exchanges in the downstream RabbitMQ, where we want to receive the messages from the Upstream
 - **Virtual host** - We put the public virtual host on the downstream RabbitMQ
@@ -31,6 +32,7 @@
 
 3. In my local RabbitMQ  `http://docker-local.com:15672/` i login with guest/guest user and go to `Admin->Federation Upstrreams` and put the following settings:
 - **Virtual Host** - unicom-public
+- **Name** - unicom-public
 - **Uri** - amqp://guest:guest@rmq.integration.onebigsplash.com:5672/unicom-public
 - **Exchange** - PublicEvents
 4. Go to `Admin --> Policies` and add a policy with the following settings:
