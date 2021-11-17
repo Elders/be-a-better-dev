@@ -23,7 +23,7 @@
 - Setup Cronus.UI - `docker run --restart=always --name=cronus -d -p 8080:8080 elders/cronus:0.2.0`
 
 - Setup Neo4j with Docker (**NB**: Container memory is limited to 4GB in example):  
-`docker run --restart=always -d --name neo4j --publish=7474:7474 --publish=7687:7687 --cap-add=SYS_RESOURCE -v /var/lib/neo4j/data --env NEO4J_AUTH=none --env NEO4J_dbms_memory_heap_initialSize=3G --env NEO4J_dbms_memory_heap_maxSize=3G --env NEO4J_dbms_memory_pagecache_size=2G neo4j:4.0.0`
+`docker run --restart=always -d --name neo4j --publish=7474:7474 --publish=7687:7687 --cap-add=SYS_RESOURCE -v /var/lib/neo4j/data --env NEO4J_AUTH=none --env NEO4J_dbms_memory_heap_initialSize=3G --env NEO4J_dbms_memory_heap_maxSize=3G --env NEO4J_dbms_memory_pagecache_size=2G elders/neo4j:4.3.1`
 
 - Setup Redis with Docker
   - Standalone
