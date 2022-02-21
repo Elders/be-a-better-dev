@@ -23,6 +23,8 @@
 - **Max Hops** - that means that the messages we want to receive must have maximum 2 hops. A hop increases when a message goes through exchange. It's useful to avoid circular reference for example.
 - **How to Update the Hops** - click add upstream and fill the same information for the one u want to update
 
+** This tutorial is also viable if you want to receive signals from another queue (e.g. receiving signals from Newton INT locally in your VAPT RabbitMQ). The one thing that you should be careful with is the naming of the VHosts because it can cause mismatches if it's not right.
+
 ## Example
 
 1. I have an old version of RabbitMq so open docker and type  
