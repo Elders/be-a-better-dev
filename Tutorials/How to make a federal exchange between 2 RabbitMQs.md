@@ -8,7 +8,7 @@
 
 3. In the downstream RabbitMQ go to Admin Tab-> Federation Upstream and add a new upstream with the following settings:
 - **Virtual Host** - Here you pick the downstream public VHost where you want to receive the messages
-- **Uri** - Put the Uri to the Upstream RMQ VHost and the credentials for the RMQ user amqp://guest:guest@rmq.integration.onebigsplash.com:5672/unicom-public
+- **Uri** - Put the Uri to the Upstream RMQ VHost and the credentials for the RMQ user amqp://guest:guest@rmq.test.com:5672/unicom-public
 - **Name** - Name of the federation upstream
 - **Exchange** - Upstream Exchange that you want to bind to
 
@@ -38,7 +38,7 @@
 3. In my local RabbitMQ  `http://docker-local.com:15672/` i login with guest/guest user and go to `Admin->Federation Upstrreams` and put the following settings:
 - **Virtual Host** - unicom-public (VHost of the upstream RMQ)
 - **Name** - INT (we name our fed exchange INT, because it will bind to int environment)
-- **Uri** - amqp://guest:guest@rmq.integration.onebigsplash.com:5672/unicom-public (the uri of the upstream VHost we want to bind to)
+- **Uri** - amqp://guest:guest@rmq.test.com:5672/unicom-public (the uri of the upstream VHost we want to bind to)
 - **Exchange** - PublicEvents (That's the name of the upstream exchange we want to bind to)
 
     *Now that we have the federated exchanges we achieved the following: The messages that go in the `PublicEvents` exchange in the upstream rabbitmq will now come to our federated exchange `INT`*
