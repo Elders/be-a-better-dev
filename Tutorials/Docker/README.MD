@@ -108,3 +108,7 @@ users:
 - `sudo coreos-install -d /dev/sda -C stable -c cloud-config-file.yml` to do the actuall install of CoreOS
 - `sudo shutdown -h now` will shutdown the VM
 - unmount the CoreOS image
+
+# Install Redis Insight
+
+`https://redis.com/redis-enterprise/redis-insight/`
