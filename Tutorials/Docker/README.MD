@@ -111,4 +111,4 @@ users:
 
 # Install Redis Insight
 
-`https://redis.com/redis-enterprise/redis-insight/`
+[https://redis.com/redis-enterprise/redis-insight/](https://redis.com/redis-enterprise/redis-insight/)
