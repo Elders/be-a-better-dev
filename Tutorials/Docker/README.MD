@@ -33,7 +33,7 @@
 `docker run --restart=always --name redisg -d -p 6379:6379 redislabs/redisgraph:2.8.13`
 
 - Setup Redis Graph Read-only replica with Docker:
-`cocker run -d -p 6378:6379 --name redisg-replica -v redis-ro:/data redislabs/redisgraph:2.8.13 --loadmodule /usr/lib/redis/modules/redisgraph.so --replicaof 172.17.0.1 6379`
+`docker run -d -p 6378:6379 --name redisg-replica -v redis-ro:/data redislabs/redisgraph:2.8.13 --loadmodule /usr/lib/redis/modules/redisgraph.so --replicaof 172.17.0.1 6379`
 
 - Consul for local dev
 `docker run --restart=always -d -p 8500:8500 --name consul consul:1.9.5 agent -server -node=mynkow -ui -advertise=127.0.0.1 -bootstrap -client=0.0.0.0`
