@@ -1,5 +1,7 @@
 - This is an example of how to configure HTTP Client for local development if there is an issue with SSL certificate
     1. Add this when registering the HTTP client
+
+
 `
 if (env.IsDevelopment())
 {
