@@ -2,7 +2,7 @@
     1. Add this when registering the HTTP client
 
 
-`
+```
 if (env.IsDevelopment())
 {
     services
@@ -21,4 +21,4 @@ else
     .AddHttpClient("your_client_name", client => client.BaseAddress = address)
     .AddClientAccessTokenHandler("your_client_name");
 }
-`
+````
