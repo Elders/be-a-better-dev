@@ -1,0 +1,32 @@
+1. Log into cassandra machine
+2. Inspect the container of cassandra and find the location of the directory of the keyspaces:
+    * docker inspect cassandra (take dir from "Mounts/Source")
+    * sude -s (for root)
+    * cd cassandra dir(from "Mount") then cd data and see if you are in the correct dir
+3.0 If you want to check the size of the keyspace
+    * du -hs <keyspace> (disk usage human readable summary)
+3.1 Archive the keyspaces
+    * tar zcf /home/r2d2/randomNameOfTheAchive.tgz [keyspace(which is the dir name)] (z - zip, c - create, f - file)
+3.2 Download/Copy the archive to the destination machine
+    * scp r2d2@ipOfTheMachine:randomNameOfTheAchive.tgz . (secure copy from source to destination, the dot is the current dir)
+4. Copy keyspace and table schema
+    * docker exec -it cassandra bash (enter source cassandra container)
+    * cqlsh (enters cql syntax)
+    * DESCRIBE KEYSPACE <keyspace>; (and copy the schema of keyspace and tables which you need)
+    * Enters the destination cassandra and exec the cqls (in order to create the schemas)
+5. Extract the files from the zip
+    * tar zxf randomNameOfTheAchive.tgz (extract the content of the zip in the current dir)
+6. Move the extracted files from the dir of the table into the local cassandra dir
+    * install mc or be a loser
+7 Enter the local cassandra container and Nodetool refresh(which is basically depricated but it works so..)
+    * docker exec -it cassandra bash
+    * nodetool refresh [keyspace] [table_name]
+    --- Done ---
+
+Optional steps(better do them)
+8. Clean up the archive from the source and destination cassandra
+8.1 Source
+    *  cd /home/r2d2/
+    *  rm randomNameOfTheAchive.tgz
+8.2 Local
+    * locate and delete the files wherever they are
