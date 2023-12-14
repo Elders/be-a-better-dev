@@ -14,7 +14,9 @@
   `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e "discovery.type=single-node" -e "discovery.zen.minimum_master_nodes=1" -e "cluster.name=docker-local" -e "bootstrap.memory_lock=true" -e ES_JAVA_OPTS="-Xms2g -Xmx2g" -v esdata:/usr/share/elasticsearch/data docker.elastic.co/elasticsearch/elasticsearch-oss:7.5.2`
   - `ES_JAVA_OPTS="-Xms2g -Xmx2g"` allows ES to use 2 GB of RAM. Check the machine's available RAM before executing the command above. The docker container is allowed 3 GB as it needs to be more than the 2GB for elastic.
   - For reference [https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
-	
+	- v8.11.1
+  `docker volume create --name esdata-8.11.1`
+  `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e "discovery.type=single-node" -v esdata-8.11.1:/usr/share/elasticsearch/data elasticsearch:8.11.1`
 - Setup Kibana - `docker run --restart=always -d --name kibana --link {elasticsearchcontainer}:elasticsearch -p 5601:5601 kibana:5.2`
 
 
