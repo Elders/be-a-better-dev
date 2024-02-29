@@ -17,6 +17,9 @@
 	- v8.11.1
   `docker volume create --name esdata-8.11.1`
   `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e "discovery.type=single-node" -v esdata-8.11.1:/usr/share/elasticsearch/data elasticsearch:8.11.1`
+  - setup with no authentication required 
+  `docker run --restart=always -d --name elasticsearch -p 9200:9200 -p 9300:9300 -e "http.host=0.0.0.0" -e "transport.host=127.0.0.1" -e "discovery.type=single-node" -e "xpack.security.enabled=false" -e "xpack.security.enrollment.enabled=false" -v esdata-8.11.1:/usr/share/elasticsearch/data elasticsearch:8.11.1`
+
 - Setup Kibana - `docker run --restart=always -d --name kibana --link {elasticsearchcontainer}:elasticsearch -p 5601:5601 kibana:5.2`
 
 
