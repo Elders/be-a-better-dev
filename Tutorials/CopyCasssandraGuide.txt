@@ -18,9 +18,9 @@
     * tar zxf randomNameOfTheAchive.tgz (extract the content of the zip in the current dir)
 6. Move the extracted files from the dir of the table into the local cassandra dir
     * install mc or be a loser
-7 Enter the local cassandra container and Nodetool refresh(which is basically depricated but it works so..)
+7 Enter the local cassandra container and Nodetool import 
     * docker exec -it cassandra bash
-    * nodetool refresh [keyspace] [table_name]
+    * nodetool import [keyspace] [table_name] [path_to_SSTable_file]
     --- Done ---
 
 Optional steps(better do them)
